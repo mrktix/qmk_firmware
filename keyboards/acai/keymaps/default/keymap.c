@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include QMK_KEYBOARD_H
+#include "acai.h"
 
 enum custom_layers {
     _ALP,
@@ -29,13 +29,11 @@ enum custom_keycodes {
     MY_SFT,
     MY_DDOT,
     MY_DCOL,
-}
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-//abc,
-
-//alphas, space, layers, shift, control, backspace, enter, tab, maybe capslock?
+/* alphas, space, layers, shift, control, backspace, enter, tab, maybe capslock? */
 [_ALP] = LAYOUT(
     KC_J,         KC_C,         KC_Y,         KC_F,         KC_K,           /**/          KC_Z,         KC_L,         KC_TAB,       KC_U,         KC_Q,
     KC_R,         KC_S,         KC_T,         KC_H,         KC_D,           /**/          KC_M,         KC_N,         KC_A,         KC_I,         KC_O,
@@ -43,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                   HYPR(KC_ESC), KC_BSPC,      KC_SPC,       TO(_SYM),       /**/          TO(_NUM),     KC_E,         MY_SFT,       OSM(MOD_LCTL)
 ),
 
-//numbers and math symbols
+/* numbers and math symbols */
 [_NUM] = LAYOUT(
     _______,      KC_MINUS,     KC_PLUS,      KC_EQUAL,     _______,        /**/          _______,      KC_EQUAL,     KC_ASTERISK,  KC_SLASH,     _______,
     KC_2,         KC_3,         KC_4,         KC_5,         _______,        /**/          _______,      KC_6,         KC_7,         KC_8,         KC_9,
@@ -51,9 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                   _______,      KC_0,         KC_1,         TO(_SYM),       /**/          TO(_NUM),     TO(_ALP),     _______,      _______
 ),
 
-//symbols
-//brc [],  cbr {},  abk <>,  prn (), circ ^
-//.. :: ? ! & | _ # $ @ ^ % \
+/* symbols: brc [],  cbr {},  abk <>,  prn (), circ ^ .. :: ? ! & | _ # $ @ ^ % \ */
 
 [_SYM] = LAYOUT(
     _______,      KC_PERC,      KC_LABK,      KC_RABK,      _______,        /**/          _______,      KC_EQUAL,     KC_CIRC,      KC_BSLS,      _______,
@@ -105,11 +101,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 if (get_mods() & MOD_MASK_SHIFT) {
                     register_code(KC_QUOT); //key when shift is held
                 } else {
-                    register_code(KC_DQT);
+                    register_code((uint8_t) KC_DQT);
                 }
             } else {
                 unregister_code(KC_QUOT);
-                unregister_code(KC_DOT);
+                unregister_code((uint8_t) KC_DQT);
             }
             break;
 
@@ -118,11 +114,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 if (get_mods() & MOD_MASK_SHIFT) {
                     register_code(KC_CAPS); //key when shift is held
                 } else {
-                    register_code(OSM(MOD_LSFT));
+                    register_code((uint8_t) OSM(MOD_LSFT));
                 }
             } else {
                 unregister_code(KC_CAPS);
-                unregister_code(OSM(MOD_LSFT));
+                unregister_code((uint8_t) OSM(MOD_LSFT));
             }
             break;
     }
