@@ -60,11 +60,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 /* symbols: brc [],  cbr {},  abk <>,  prn (), circ ^ .. :: ? ! & | _ # $ @ ^ % \ */
-
 [_SYM] = LAYOUT(
-    XXXXXXX,      KC_EXLM,      KC_LABK,      KC_RABK,      XXXXXXX,        /**/          XXXXXXX,      KC_EQUAL,     KC_CIRC,      KC_QUES,      XXXXXXX,
-    KC_HASH,      KC_AMPR,      KC_LCBR,      KC_RCBR,      XXXXXXX,        /**/          XXXXXXX,      KC_RPRN,      KC_LPRN,      KC_PIPE,      KC_UNDS,
-    _______,      KC_AT,        KC_LBRC,      KC_RBRC,      XXXXXXX,        /**/          XXXXXXX,      KC_DLR,       MY_DDOT,      MY_DCOL,      XXXXXXX,
+    XXXXXXX,      KC_AT,        KC_QUES,      KC_DLR,       XXXXXXX,        /**/          XXXXXXX,      KC_EQUAL,     KC_EXLM,      KC_UNDS,      XXXXXXX,
+    KC_HASH,      KC_AMPR,      KC_LCBR,      KC_RCBR,      XXXXXXX,        /**/          XXXXXXX,      KC_RPRN,      KC_LPRN,      KC_PIPE,      KC_CIRC,
+    _______,      MY_DDOT,      KC_LABK,      KC_RABK,      XXXXXXX,        /**/          XXXXXXX,      KC_RBRC,      KC_LBRC,      MY_DCOL,      XXXXXXX,
     XXXXXXX,      _______,      _______,      XXXXXXX,      _______,        /**/          _______,      TO(_ALP),     TO(_OTH),     XXXXXXX,      XXXXXXX
 ),
 

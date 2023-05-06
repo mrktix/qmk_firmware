@@ -1,0 +1,19 @@
+| j | c | y | f | k |         | z | l |TAB| u | q |
+| r | s | t | h | d |   ALP   | m | n | a | i | o |
+|ENT| v | g | p | b |         | x | w | . | ; | ' |
+    |LDR|BSP|' '|SYM|         |NUM| e |SFT|CTL|
+
+|   | - | + | = |   |         |   | = | * | / |   |
+| 1 | 2 | 3 | 4 |   |   NUM   |   | 5 | 6 | 7 | 8 |
+|ENT|ESC| % | 9 |   |         |   | ~ | . | \ |   |
+    |LDR|BSP| 0 |SYM|         |NUM|ALP|   |   |
+
+|   | @ | ? | $ |   |         |   | = | ! | _ |   |
+| # | & | { | } |   |   SYM   |   | ) | ( | | | ^ |
+|ENT| ..| < | > |   |         |   | ] | [ | ::|   |
+    |LDR|BSP|   |SYM|         |NUM|ALP|OTH|   |
+
+|F9 |F10|F11|F12|   |         |   |SFT|CTL|GUI|ALT|
+|F5 |F6 |F7 |F8 |   |   OTH   |   | < | ^ | v | > |
+|F1 |F2 |F3 |F4 |   |         |   |HOM|PGU|PGD|END|
+    |LDR|BSP|   |SYM|         |NUM|ALP|   |BOOT|
