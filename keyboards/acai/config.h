@@ -24,6 +24,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
 
+/* the number of times you tap the osm until it toggles on (holds for more than one key) */
+#define ONESHOT_TAP_TOGGLE 2
+#define TAPPING_TOGGLE 2
+
 /* #define VENDOR_ID       0x0000 */
 /* #define PRODUCT_ID      0x0000 */
 /* #define DEVICE_VER      0x0000 */
