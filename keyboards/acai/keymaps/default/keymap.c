@@ -48,15 +48,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_J,         KC_C,         KC_Y,         KC_F,         KC_K,           /**/          KC_Z,         KC_L,         KC_TAB,       KC_U,         KC_Q,
     KC_R,         KC_S,         KC_T,         KC_H,         KC_D,           /**/          KC_M,         KC_N,         KC_A,         KC_I,         KC_O,
     KC_ENT,       KC_V,         KC_G,         KC_P,         KC_B,           /**/          KC_X,         KC_W,         KC_DOT,       KC_SCLN,      KC_QUOT,
-    XXXXXXX,      HYPR(KC_ESC), KC_BSPC,      KC_SPC,       TO(_SYM),       /**/          TO(_NUM),     KC_E,         OSM(MOD_LSFT),OSM(MOD_LCTL),XXXXXXX
+          XXXXXXX,HYPR(KC_ESC), KC_BSPC,      KC_SPC,       TO(_SYM),       /**/          TO(_NUM),     KC_E,         OSM(MOD_LSFT),OSM(MOD_LCTL),XXXXXXX
 ),
 
 /* numbers and math symbols */
 [_NUM] = LAYOUT(
-    XXXXXXX,      KC_MINUS,     KC_PLUS,      KC_EQUAL,     XXXXXXX,        /**/          XXXXXXX,      KC_EQUAL,     KC_ASTERISK,  KC_SLASH,     XXXXXXX,
+    KC_PERC,      KC_MINUS,     KC_PLUS,      KC_EQUAL,     XXXXXXX,        /**/          XXXXXXX,      KC_EQUAL,     KC_ASTERISK,  KC_SLASH,     KC_TILD,
     KC_1,         KC_2,         KC_3,         KC_4,         XXXXXXX,        /**/          XXXXXXX,      KC_5,         KC_6,         KC_7,         KC_8,
-    _______,      KC_ESC,       KC_PERC,      KC_9,         XXXXXXX,        /**/          XXXXXXX,      KC_TILD,      KC_DOT,       KC_BSLS,      XXXXXXX,
-    XXXXXXX,      _______,      _______,      KC_0,         _______,        /**/          _______,      TO(_ALP),     XXXXXXX,      XXXXXXX,      XXXXXXX
+    _______,      KC_ESC,       KC_0,         KC_9,         XXXXXXX,        /**/          XXXXXXX,      KC_BSLS,      KC_DOT,       KC_COLN,      XXXXXXX,
+          XXXXXXX,_______,      _______,      _______,      _______,        /**/          _______,      TO(_ALP),     TO(_OTH),     XXXXXXX,XXXXXXX
 ),
 
 /* symbols: brc [],  cbr {},  abk <>,  prn (), circ ^ .. :: ? ! & | _ # $ @ ^ % \ */
@@ -64,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX,      KC_AT,        KC_QUES,      KC_DLR,       XXXXXXX,        /**/          XXXXXXX,      KC_EQUAL,     KC_EXLM,      KC_UNDS,      XXXXXXX,
     KC_HASH,      KC_AMPR,      KC_LCBR,      KC_RCBR,      XXXXXXX,        /**/          XXXXXXX,      KC_RPRN,      KC_LPRN,      KC_PIPE,      KC_CIRC,
     _______,      MY_DDOT,      KC_LABK,      KC_RABK,      XXXXXXX,        /**/          XXXXXXX,      KC_RBRC,      KC_LBRC,      MY_DCOL,      XXXXXXX,
-    XXXXXXX,      _______,      _______,      XXXXXXX,      _______,        /**/          _______,      TO(_ALP),     TO(_OTH),     XXXXXXX,      XXXXXXX
+          XXXXXXX,_______,      _______,      _______,      _______,        /**/          _______,      TO(_ALP),     TO(_OTH),     XXXXXXX,XXXXXXX
 ),
 
 //infrequent uaage that is still needed (most importantly bootloader mode)
@@ -73,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_F9,        KC_F10,       KC_F11,       KC_F12,       XXXXXXX,        /**/          XXXXXXX,      OSM(MOD_LSFT),OSM(MOD_LCTL),OSM(MOD_LGUI),OSM(MOD_LALT),
     KC_F5,        KC_F6,        KC_F7,        KC_F8,        XXXXXXX,        /**/          XXXXXXX,      KC_LEFT,      KC_UP,        KC_DOWN,      KC_RIGHT,
     KC_F1,        KC_F2,        KC_F3,        KC_F4,        XXXXXXX,        /**/          XXXXXXX,      KC_HOME,      KC_PGUP,      KC_PGDN,      KC_END,
-    XXXXXXX,      _______,      _______,      XXXXXXX,      _______,        /**/          _______,      TO(_ALP),     XXXXXXX,      QK_BOOT,      XXXXXXX
+          XXXXXXX,_______,      _______,      _______,      _______,        /**/          _______,      TO(_ALP),     TO(_OTH),     QK_BOOT,XXXXXXX
 ),
 
 };
