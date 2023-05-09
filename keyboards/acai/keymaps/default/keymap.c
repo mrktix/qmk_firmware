@@ -23,11 +23,6 @@ enum custom_layers {
     _OTH,
 };
 
-enum custom_keycodes {
-    MY_DDOT = SAFE_RANGE,
-    MY_DCOL,
-};
-
 // backspace to del ... dot to comma
 const key_override_t dot_comma_override =
     ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_COMMA);
@@ -41,6 +36,12 @@ const key_override_t** key_overrides = (const key_override_t*[]){
     NULL
 };
 
+enum custom_keycodes {
+    MY_DDOT = SAFE_RANGE,
+    MY_DCOL,
+    MY_LEAD,
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* alphas, space, layers, shift, control, backspace, enter, tab, maybe capslock? */
@@ -48,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_J,         KC_C,         KC_Y,         KC_F,         KC_K,           /**/          KC_Z,         KC_L,         KC_TAB,       KC_U,         KC_Q,
     KC_R,         KC_S,         KC_T,         KC_H,         KC_D,           /**/          KC_M,         KC_N,         KC_A,         KC_I,         KC_O,
     KC_ENT,       KC_V,         KC_G,         KC_P,         KC_B,           /**/          KC_X,         KC_W,         KC_DOT,       KC_SCLN,      KC_QUOT,
-          XXXXXXX,HYPR(KC_ESC), KC_BSPC,      KC_SPC,       TO(_SYM),       /**/          TO(_NUM),     KC_E,         OSM(MOD_LSFT),OSM(MOD_LCTL),XXXXXXX
+          XXXXXXX,MY_LEAD,      KC_BSPC,      KC_SPC,       TO(_SYM),       /**/          TO(_NUM),     KC_E,         OSM(MOD_LSFT),OSM(MOD_LCTL),XXXXXXX
 ),
 
 /* numbers and math symbols */
@@ -75,11 +76,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_F1,        KC_F2,        KC_F3,        KC_F4,        XXXXXXX,        /**/          XXXXXXX,      KC_HOME,      KC_PGUP,      KC_PGDN,      KC_END,
           XXXXXXX,_______,      _______,      _______,      _______,        /**/          _______,      TO(_ALP),     TO(_OTH),     QK_BOOT,XXXXXXX
 ),
-
 };
+
+bool guilock = false;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch(keycode) {
+        case MY_LEAD:
+            if (record -> event.pressed) {
+                if (guilock) {
+                    unregister_code(KC_LGUI);
+                } else {
+                    register_code(KC_LGUI);
+                }
+                guilock = !guilock;
+            }
+            break;
+
         case MY_DDOT:
             if (record -> event.pressed) {
                 SEND_STRING("..");
