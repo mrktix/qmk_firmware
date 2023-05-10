@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 };
 
-bool guilock = false;
+bool leaderlock = false;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch(keycode) {
@@ -86,10 +86,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record -> event.pressed) {
                 if (guilock) {
                     unregister_code(KC_LGUI);
+                    unregister_code(KC_LALT);
                 } else {
                     register_code(KC_LGUI);
+                    register_code(KC_LALT);
                 }
-                guilock = !guilock;
+                leaderlock = !leaderlock;
             }
             break;
 
