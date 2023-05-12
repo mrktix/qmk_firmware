@@ -30,6 +30,9 @@ const key_override_t ctrl_i_override =
 const key_override_t ctrl_o_override =
     ko_make_basic(MOD_MASK_CTRL, KC_O, KC_RIGHT);
 
+const key_override_t ctrl_h_override =
+    ko_make_basic(MOD_MASK_CTRL, KC_H, KC_ESC);
+
 const key_override_t** key_overrides = (const key_override_t*[]){
     &dot_comma_override,
     &back_del_override,
@@ -37,6 +40,7 @@ const key_override_t** key_overrides = (const key_override_t*[]){
     &ctrl_a_override,
     &ctrl_i_override,
     &ctrl_o_override,
+    &ctrl_h_override,
     NULL
 };
 
