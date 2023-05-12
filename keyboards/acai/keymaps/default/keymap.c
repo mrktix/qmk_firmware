@@ -1,19 +1,3 @@
-/* Copyright 2015-2017 Jack Humbert
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 #include "acai.h"
 
 enum custom_layers {
@@ -37,9 +21,22 @@ const key_override_t dot_comma_override =
 const key_override_t back_del_override =
     ko_make_basic(MOD_MASK_CTRL, KC_BSPC, KC_DEL);
 
+const key_override_t ctrl_n_override =
+    ko_make_basic(MOD_MASK_CTRL, KC_N, KC_LEFT);
+const key_override_t ctrl_a_override =
+    ko_make_basic(MOD_MASK_CTRL, KC_A, KC_UP);
+const key_override_t ctrl_i_override =
+    ko_make_basic(MOD_MASK_CTRL, KC_I, KC_DOWN);
+const key_override_t ctrl_o_override =
+    ko_make_basic(MOD_MASK_CTRL, KC_O, KC_RIGHT);
+
 const key_override_t** key_overrides = (const key_override_t*[]){
     &dot_comma_override,
     &back_del_override,
+    &ctrl_n_override,
+    &ctrl_a_override,
+    &ctrl_i_override,
+    &ctrl_o_override,
     NULL
 };
 
